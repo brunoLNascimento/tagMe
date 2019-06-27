@@ -23,15 +23,20 @@ exports.saveMenu = function (req, res){
      
 
 exports.getMenu = function (req, res){
-  
-    Menu.find({ active: true }, function (err, response){
+    if(req.params.nomePrato){
+        var query = {active: true , nomePrato:{ $regex: `.*${req.params.nomePrato}.*`, $options: 'i' }}
+    }else{
+        var query = { active: true }
+    }
+
+    Menu.find(query, function (err, response){
         if(err){
             return res.status(500).send({message: "Erro ao consultar menu"})
         }
         if(response.length){
             return res.status(200).send(response) 
         }else{
-            return res.status(204).send({message: "Menu não encontrado!"})
+            return res.status(403).send({message: "Prato não encontrado!"})
         }
     })
 }
@@ -84,6 +89,7 @@ validaCampos = function(req){
     //Função carrega dados para salvar
     var menu = new Menu({
         created_at: new Date(),
+        image: req.body.image,
         nomePrato:  req.body.nomePrato,
         discricaoPrato: req.body.discricaoPrato,
         ingredientes: req.body.ingredientes,
