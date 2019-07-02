@@ -9,20 +9,9 @@ const menu = new Schema({
     image: { type: String },
     nomePrato:  { type: String, field: 'nomePrato', required: "Nome do prato é um campo obrigatório!" },
     discricaoPrato: { type: String, field: 'discricaoPrato', required: "Discrição do prato é um campo obrigatório!" },
-	ingredientes: { type: String, field: 'ingredientes', required: "Ingredientes é um campo obrigatório!" },
-	modoPreparo: {
-        tempo: { type: String },
-        passo1: { type: String },
-        passo2: { type: String },
-        passo3: { type: String },
-        passo4: { type: String },
-        passo5: { type: String },
-        passo6: { type: String },
-        passo7: { type: String },
-        passo8: { type: String },
-        passo9: { type: String },
-        passo10: { type: String }
-        },
+    tempo: { type: String },
+	ingredientes: [{ }],
+	modoPreparo: [{  }],
     pratoVendido: {type: Number, default: 0 }
 });
 

@@ -92,21 +92,9 @@ validaCampos = function(req){
         image: req.body.image,
         nomePrato:  req.body.nomePrato,
         discricaoPrato: req.body.discricaoPrato,
-        ingredientes: req.body.ingredientes,
-        modoPreparo: 
-            {
-            tempo: req.body.modoPreparo.tempo,
-            passo1: req.body.modoPreparo.passo1,
-            passo2: req.body.modoPreparo.passo2,
-            passo3: req.body.modoPreparo.passo3,
-            passo4: req.body.modoPreparo.passo4,
-            passo5: req.body.modoPreparo.passo5,
-            passo6: req.body.modoPreparo.passo6,
-            passo7: req.body.modoPreparo.passo7,
-            passo8: req.body.modoPreparo.passo8,
-            passo9: req.body.modoPreparo.passo9,
-            passo10: req.body.modoPreparo.passo10
-            }
+        ingredientes:  req.body.ingredientes ,
+        tempo: req.body.modoPreparo.tempo,
+        modoPreparo: req.body.modoPreparo
         
     })
     return menu
