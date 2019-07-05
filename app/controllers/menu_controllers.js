@@ -93,7 +93,7 @@ validaCampos = function(req){
         nomePrato:  req.body.nomePrato,
         discricaoPrato: req.body.discricaoPrato,
         ingredientes:  req.body.ingredientes ,
-        tempo: req.body.modoPreparo.tempo,
+        tempo: req.body.tempo,
         modoPreparo: req.body.modoPreparo
         
     })
